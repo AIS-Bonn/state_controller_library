@@ -52,13 +52,15 @@ namespace statecontrollertest
 		DemoSC() : StateController("DemoSC") // Note: You may also choose to use unique names for each instance of the derived state controller class by implementing passing a name as a constructor parameter
 			, g_state_num_exec(0)
 			, g_state_num_deact(0)
-			, g_scc()
-			, g_sc()
 			, g_test_sc_callbacks(false)
 			, g_tested_term(false)
 			, g_test_exec(false)
 			, g_test_deact(false)
-		{}
+		{
+			// Initialise arrays (not in initialiser list due to C4351 in MSVC)
+			for(int i = 0; i < 6; i++) { g_scc[i] = 0; }
+			for(int i = 0; i < 3; i++) { g_sc[i][0] = 0; g_sc[i][1] = 0; g_sc[i][2] = 0; }
+		}
 
 		// Step callbacks
 		virtual bool preStepCallback();

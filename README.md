@@ -2,9 +2,9 @@
 
 **Author:** Philipp Allgeuer
 
-**Version:** 1.2.1
+**Version:** 1.2.2
 
-**Date:** 05/11/13
+**Date:** 21/11/14
 
 ##General Overview##
 The State Controller Library is a generic platform-independent C++ framework that allows finite state machines and multi-action planning generalisations thereof to be realised. The structure and implementation of this library focuses on the application of finite state machines to real-time control loops, but can be reasonably adapted for virtually any other application, even completely unrelated to control systems. An emphasis has been placed on having very low overhead so as not to hurt overall system performance no matter where this library is used, while still maintaining ease of use. Code size has also been kept to a minimum.
@@ -34,7 +34,7 @@ There are three ways of using the library:
 
 Due to the small and efficient nature of the library, one of the first two options is recommended. Very minimal benefit is expected over the other two options when choosing to build it as a dynamic library.
 
-Note that as at release `v1.2.1`, the required (non-test) source files are simply `state_controller.h` and `state_controller.cpp`.
+Note that as at release `v1.2.2`, the required (non-test) source files are simply `state_controller.h` and `state_controller.cpp`.
 
 A sample makefile for building the static and dynamic libraries using `gcc` is included in the release. The makefile also demonstrates how the `test_state_controller` unit test can be built. As mentioned in the makefile however, the State Controller Library could equivalently be built using any other compiler, such as for example MSVC.
 

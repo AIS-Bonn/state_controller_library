@@ -10,8 +10,8 @@
 * @defgroup StateControllerLibrary State Controller Library
 *
 * @author Philipp Allgeuer (<pallgeuer@ais.uni-bonn.de>)
-* @date November 5, 2013
-* @version 1.2.1
+* @date November 21, 2014
+* @version 1.2.2
 *
 * @section sclsec1 Overview
 * The %State Controller Library is a generic platform-independent C++ namespace that allows finite state machines

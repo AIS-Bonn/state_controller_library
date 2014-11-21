@@ -13,6 +13,18 @@ using namespace testutilities;
 // Formatting functions
 //
 
+// ANSI escape characters do not work in general in the Win32 console
+#if !defined(TEST_UTIL_FORCE_COLOURS) && defined(_MSC_VER)
+
+// Define dud implementations of the required functions
+std::string testutilities::setFormat(Attr::Colour foreground, Attr::Colour background, Attr::Attribute attribute) { return ""; }
+std::string testutilities::setColour(Attr::Colour foreground, Attr::Colour background) { return ""; }
+std::string testutilities::setAttribute(Attr::Attribute attribute) { return ""; }
+std::string testutilities::resetColour() { return ""; };
+std::string testutilities::resetFormat() { return ""; };
+
+#else
+
 // Set a particular foreground colour, background colour and attribute
 std::string testutilities::setFormat(Attr::Colour foreground, Attr::Colour background, Attr::Attribute attribute)
 {
@@ -82,4 +94,5 @@ std::string testutilities::resetFormat()
 	// Return the required ANSI escape code
 	return setAttribute(Attr::RESET);
 }
+#endif
 // EOF
