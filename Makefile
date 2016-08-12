@@ -32,7 +32,7 @@ DYNDIR = $(BUILDDIR)/for_dyn_lib
 ENSURE_DIR = @mkdir -p $(@D)
 
 INCLUDES = -I$(INCLUDEDIR)
-LDFLAGS = -lpthread -lgtest -lgtest_main -L../../gtest
+LDFLAGS = ../../gtest/libgtest.a ../../gtest/libgtest_main.a -lpthread
 
 DLIB_OBJS = $(DYNDIR)/state_controller.o
 LIB_OBJS = $(BUILDDIR)/state_controller.o
